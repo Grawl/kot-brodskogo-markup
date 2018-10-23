@@ -1,0 +1,69 @@
+.gutter
+	position: relative
+	width: 100%
+	user-select: none
+	&.unlocked
+		.handle
+			cursor: initial
+		.handle,
+		.target
+			transform: scale(0)
+.handle,
+.target
+	width: 10%
+	height: 0
+	padding-bottom: 10%
+	border-radius: 100%
+	transform: scale(1)
+.handle
+	position: relative
+	left: 0
+	cursor: pointer
+	transition: background 0.2s ease-out, left 0.3s ease-out, transform 1s
+	&.dragging
+		transition: none
+		.visiblePart
+			transform: scale(0.25)
+		.animationLayer
+			animation: none
+		.circle
+			animation: none
+	.animationLayer
+		absolute: top left
+		size: 100%
+		animation: pulse 2s infinite alternate-reverse ease-in-out
+		border-radius: inherit
+	.visiblePart
+		absolute: top left
+		size: 100%
+		border-radius: inherit
+		background: white
+		transform: scale(0.5)
+		transition: transform 0.2s
+		will-change: transform
+	.circle
+		absolute: top left
+		size: 100%
+		border-radius: inherit
+		border: 1px solid white
+		transform: scale(0)
+		opacity: 0
+		animation: circle 4s infinite ease-out
+		will-change: transform
+		@keyframes circle
+			from
+				transform: scale(0)
+				opacity: 0.2
+			to
+				transform: scale(2)
+				opacity: 0
+.target
+	absolute: top -1px right
+	border: 1px solid white
+	opacity: 0.3
+	transform: scale(0.5)
+@keyframes pulse
+	from
+		transform: scale(1)
+	to
+		transform: scale(0.8)

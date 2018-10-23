@@ -1,0 +1,7 @@
+import './browsersync'
+import './clear'
+import './optimize'
+import './views'
+import './scripts'
+import './styles'
+import './watch'

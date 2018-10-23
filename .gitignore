@@ -1,0 +1,12 @@
+/node_modules
+/public/*.html
+/public/assets/*.css
+/public/assets/*.js
+/public/assets/*.map
+/public/assets/cache-manifest.json
+/public/assets/linked
+/public/assets/cached
+/public/assets/resize
+/rollup-visualizer.html
+/yarn-error.log
+.env-dev

@@ -1,0 +1,9 @@
+{
+    "namespaces": [
+        {
+            "path": "public/source/",
+            "type": "ADD_PATH",
+            "namespace": "view::"
+        }
+    ]
+}

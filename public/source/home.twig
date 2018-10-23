@@ -1,0 +1,49 @@
+{% extends '@view::/layouts/base.twig' %}
+
+{% block main %}
+	{% set scope = {
+		nav: [
+			{
+				link: '/library.html',
+				label: 'что почитать',
+			},
+			{
+				link: '/videos.html',
+				label: 'что посмотреть',
+			},
+			{
+				link: '/calendar.html',
+				label: 'куда пойти',
+			},
+		],
+	} %}
+	<div intro id='intro'>
+		{% include '@view::/components/intro/intro.twig' %}
+	</div>
+	<nav class='navLayer'>
+		<ul class='nav'>
+			{% for item in scope.nav %}
+				<li class='navItem'>
+					<a class='navLink'
+					   href='{{ item.link }}'>
+						{{ item.label }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		window['site'].step1video = {
+			url: '{{ 'media/blackboard.mp4'|asset }}',
+			type: 'video/mp4',
+		};
+		window['site'].step2video = {
+			url: '{{ 'media/typewriter.mp4'|asset }}',
+			type: 'video/mp4',
+		};
+	</script>
+	{{ parent() }}
+{% endblock %}
