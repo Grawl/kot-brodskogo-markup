@@ -5,9 +5,9 @@ const config = process[process.env.gulp_config_name]
 const $ = gulpLoadPlugins()
 gulp.task('watch', () => {
 	function watch(src, tasks) {
-		return $.watch(src, $.batch((events, done) => {
-			gulp.start(tasks, done)
-		}))
+		return $.saneWatch(src, function() {
+			gulp.start(tasks)
+		})
 	}
 	if (config.viewsToWatch) {
 		watch(config.viewsToWatch, ['views'])
