@@ -1,5 +1,5 @@
 files:
-  include: 'public/source/**/*.{sass,scss}'
+  include: 'source/**/*.{sass,scss}'
 rules:
   attribute-quotes:
     - 1
@@ -114,16 +114,17 @@ rules:
         - border-right-radius
         - border-x-width
         - border-y-width
+        - border-x
+        - border-y
+        - border-x-color
+        - border-y-color
         - size
+        - min-size
         - max-size
         - margin-x
         - margin-y
         - padding-x
         - padding-y
-        - border-x
-        - border-y
-        - border-x-color
-        - border-y-color
         - absolute
         - fixed
         - relative

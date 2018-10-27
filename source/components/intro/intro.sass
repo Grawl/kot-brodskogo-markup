@@ -1,0 +1,66 @@
+.isVideoLoading
+	.logo
+		color: black
+.videoLoading
+	absolute: top left
+	size: 100%
+	z-index: 10
+	display: flex
+	justify-content: center
+	align-items: center
+	background-color: white
+	color: black
+	cursor: progress
+	&.hidden
+		display: none
+.logo
+	color: white
+.step1,
+.step2
+	height: 100%
+.unlock
+	absolute: top 50% left 30vw right 30vw
+	z-index: 10
+	width: auto
+	transform: translateY(-50%)
+	pointer-events: auto
+.video
+	absolute: top left
+	z-index: 1
+	size: 100%
+	object-fit: cover
+	background-color: black
+	opacity: 0
+	transition: opacity 1s
+	pointer-events: none
+.text
+	absolute: top left 50%
+	z-index: 2
+	width: 20em
+	margin-left: -10em
+	font-family: 'PT Mono', monospace
+	font-size: 1.6em
+	color: white
+	opacity: 0
+	.invisible
+		opacity: 0
+.step1
+	.video1
+		opacity: 1
+		transition: opacity 1s
+		pointer-events: auto
+.step2
+	.video1
+		transition: opacity 5s
+	.video2
+		opacity: 1
+		transition: opacity 1s
+		pointer-events: auto
+	.text2
+		opacity: 1
+.step3
+	.logo
+		color: black
+	.videoLoading
+		opacity: 0
+		pointer-events: none

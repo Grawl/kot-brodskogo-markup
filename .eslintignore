@@ -1,3 +1,4 @@
 **/*.js
-!gulp/**/*.js
-!public/source/**/*.js
+!/*.js
+!utils/**/*.js
+!source/**/*.js

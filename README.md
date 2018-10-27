@@ -2,8 +2,8 @@
 
 ## Requirements
 
- * Node.js 9.11.1
- * Yarn 1.9.4
+ * Node.js `.nvmrc`
+ * Yarn `.yvmrc`
 
 ## Install
 
@@ -26,21 +26,17 @@ yarn production
 ```
 
 - minified assets
+- cachebuster
 
-**Debug build:**
+**Regular build:**
 
 ```
-yarn debug
+yarn build
 ```
 
 - not minified assets
 - requires development environment: `.env-dev` file
 
-> Note: you need `.env-dev` file for `yarn dev-build`
-
 ## Develop
 
-`dev.sh`
-
-`yarn watch` / `yarn serve`
-
+`dev.sh` / `yarn watch`

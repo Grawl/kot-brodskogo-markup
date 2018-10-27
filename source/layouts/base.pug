@@ -1,0 +1,67 @@
+doctype html
+-
+	const scope = {
+		title: 'Кот Бродского',
+		meta_title: 'Кот Бродского − это проект про книги, город, людей, котов, бабушкин ундервуд и старую шляпу.',
+		meta_description: 'Проект про книги, город, людей, котов, бабушкин ундервуд и старую шляпу.',
+		// isHome: scope.isHome,
+	}
+mixin manifest(scope)
+	link(rel='apple-touch-icon' sizes='180x180' href='/manifest/apple-touch-icon.png')
+	link(rel='icon' type='image/png' sizes='32x32' href='/manifest/favicon-32x32.png')
+	link(rel='icon' type='image/png' sizes='16x16' href='/manifest/favicon-16x16.png')
+	link(rel='manifest' href='/manifest/site.webmanifest')
+	link(rel='mask-icon' href='/manifest/safari-pinned-tab.svg' color='#f5b233')
+	meta(name='apple-mobile-web-app-title' content='Кот Бродского')
+	meta(name='application-name' content='Кот Бродского')
+	meta(name='msapplication-TileColor' content='#ffffff')
+	meta(name='theme-color' content='#ffffff')
+html.no-js.no-js(lang='ru')
+	head
+		meta(charset='utf-8')
+		title=scope.title
+		meta(name='description' content=scope.meta_description)
+		meta(name='title' content=scope.meta_title)
+		//+manifest(scope)
+		meta(name='viewport' content='width=device-width initial-scale=1.0')
+		script.
+			window['site'] = {};
+			window.rootElement = document.documentElement;
+			rootElement.classList.remove('no-site-js');
+			rootElement.classList.add('site-js');
+		style.
+			.no-js .navLayer {
+				opacity: 1;
+			}
+			.js .navLayer {
+				opacity: 0;
+			}
+			.js .videoPresentation ~ .navLayer {
+				opacity: 1;
+			}
+		script.
+			window.rootElement = document.documentElement;
+			rootElement.classList.remove('no-js');
+			rootElement.classList.add('js');
+			window['site'] = {
+				description: '#{ scope.meta_title }'
+			};
+		//link(href='style.css'|cachedAsset rel='stylesheet')
+		// PT Mono
+			regular 400
+		link(href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet')
+		// Yeseva One
+			regular 400
+		link(href='https://fonts.googleapis.com/css?family=Yeseva+One' rel='stylesheet')
+		// Oranienbaum
+			regular 400
+		link(href='https://fonts.googleapis.com/css?family=Oranienbaum' rel='stylesheet')
+		// Roboto Slab
+			thin 100
+			light 300
+			regular 400
+			bold 700
+		link(href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet')
+	body
+		block container
+		block scripts

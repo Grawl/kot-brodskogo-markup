@@ -1,0 +1,36 @@
+extends layouts/base
+block container
+	-
+		const nav = [
+			{
+				link: '/library.html',
+				label: 'что почитать',
+			},
+			{
+				link: '/videos.html',
+				label: 'что посмотреть',
+			},
+			{
+				link: '/calendar.html',
+				label: 'куда пойти',
+			},
+		]
+	#intro.videoPresentation(intro)
+		include components/intro/intro
+	nav.navLayer
+		ul.nav
+			for item in nav
+				li.navItem
+					a.navLink(
+					href=item.link
+					)=item.label
+block scripts
+	script.
+		window['site'].step1video = {
+			url: 'media/blackboard.mp4',
+			type: 'video/mp4',
+		};
+		window['site'].step2video = {
+			url: 'media/typewriter.mp4',
+			type: 'video/mp4',
+		};

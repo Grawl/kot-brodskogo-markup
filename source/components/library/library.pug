@@ -1,0 +1,68 @@
+-
+	const articles =
+		[
+			{
+				title: 'Щенок',
+				author: 'Джордж Сондерс',
+				description: 'Повесть с кукурузным полем и&nbsp;американскими именами в&nbsp;переводе Марии Ереминой',
+				image: '/content/library/6ctnlfxgbf8.jpg',
+			},
+			{
+				title: 'Скелет. Готический рассказ',
+				author: 'Иван Ахмадиев',
+				description: 'от&nbsp;первого лица из&nbsp;уст одной девушки',
+				image: '/content/library/ahmadiev_skelet.jpg',
+			},
+			{
+				title: 'Сказка о&nbsp;Часовщике',
+				author: 'Ольга Аристова',
+				description: 'Всем известно — на&nbsp;небе живет Часовщик, он латает планеты и&nbsp;строит их в&nbsp;ряд',
+				image: '/content/library/час(5).jpg',
+			},
+			{
+				title: 'Повесть о&nbsp;чучеле, Тигровой Шапке и&nbsp;Малом Париже. Глава из&nbsp;книги.',
+				author: 'Константин Дмитриенко',
+				description: '',
+				image: '/content/library/1517018008036.jpg',
+			},
+			{
+				title: 'Возлюбить ближнего. Отрывок из&nbsp;пьесы',
+				author: 'Виктория Костюкевич',
+				description: 'Трое молодых людей в&nbsp;поезде от&nbsp;Владивостока до&nbsp;Москвы',
+				image: '/content/library/кост(10).jpg',
+			},
+			{
+				title: 'Повесть о&nbsp;чучеле, Тигровой Шапке и&nbsp;Малом Париже. Глава из&nbsp;книги.',
+				author: 'Константин Дмитриенко',
+				description: '',
+				image: '/content/library/1517018008036.jpg',
+			},
+			{
+				title: 'Щенок',
+				author: 'Джордж Сондерс',
+				description: 'Повесть с кукурузным полем и&nbsp;американскими именами в&nbsp;переводе Марии Ереминой',
+				image: '/content/library/6ctnlfxgbf8.jpg',
+			},
+			{
+				title: 'Скелет. Готический рассказ',
+				author: 'Иван Ахмадиев',
+				image: '/content/library/ahmadiev_skelet.jpg',
+				description: 'от&nbsp;первого лица из&nbsp;уст одной девушки',
+			},
+		]
+.shelf
+	for article in articles
+		a.shelf-item(href='/library-article.html')
+			article.shelf-item--layout
+				p.shelf-item-author
+					!=article.author
+				h4.shelf-item-title
+					!=article.title
+				if article.description
+					p.shelf-item-description
+						!=article.description
+				figure.shelf-item-image
+					img(
+					src=resizeImage(article.image, 200, 100)
+					alt!=article.title
+					)
