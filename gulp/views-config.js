@@ -23,7 +23,7 @@ function getTranslationString(config, path) {
 	try {
 		const file = `translations/messages.${config.locale}.yaml`
 		const locale = yaml.safeLoad(fs.readFileSync(file, 'utf8'))
-		if(path.match(/[\[\]]/)) {
+		if (path.match(/[[]]/)) {
 			console.warn("Braces are supported by Lodash.get but is not supported by some localization engines, such as Symfony. Please, do not use braces access to localization keys. Instead of `'key[path with spaces]'|trans` just use `'key.path with spaces'|trans` and it will work as expected.")
 		}
 		return get(locale, path)

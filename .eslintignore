@@ -1,2 +1,3 @@
 **/*.js
+!gulp/**/*.js
 !public/source/**/*.js

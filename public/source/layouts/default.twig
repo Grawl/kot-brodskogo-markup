@@ -1,0 +1,15 @@
+{% extends '@view::/layouts/base.twig' %}
+
+{% block main %}
+	{% set scope = {
+	} %}
+	<a href='/'
+	   title='{{ 'Вернуться на главную' }}'
+	   class='logo'
+	>
+		{% include '@view::/assets/kot-brodskogo-logo.svg' %}
+	</a>
+	<div class='content'>
+		{% block content %}{% endblock %}
+	</div>
+{% endblock %}

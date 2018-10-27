@@ -1,12 +1,8 @@
-{% extends '@view::/layouts/base.twig' %}
+{% extends '@view::/layouts/default.twig' %}
 
-{% block main %}
+{% block content %}
 	{% set scope = {
 	} %}
-	<a href='/' class='logo'>
-		{% include '@view::/assets/kot-brodskogo-logo.svg' %}
-	</a>
-	<h1>
-		Library
-	</h1>
+	{% import '@view::/components/library/library.twig' as macros %}
+	{{ macros.content(scope) }}
 {% endblock %}
