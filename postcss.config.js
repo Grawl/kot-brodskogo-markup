@@ -9,9 +9,6 @@ module.exports = ctx => {
 			'postcss-axis': {},
 			'postcss-short': {},
 			'postcss-position-alt': {},
-			'postcss-inline-svg': {
-				path: process.cwd(),
-			},
 			'autoprefixer': {},
 		},
 	}
