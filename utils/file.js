@@ -2,6 +2,10 @@ const jimp = require('jimp')
 const fs = require('fs')
 const path = require('path')
 const config = require('../webpack.config').config
+module.exports = {
+	resizeImage,
+	getFileContent,
+}
 function resizeImage(filePath, width, height, method = 'cover') {
 	const makeFilePath = filePath => {
 		const size = [
@@ -39,4 +43,10 @@ function resizeImage(filePath, width, height, method = 'cover') {
 		return makeFilePath(filePath)
 	}
 }
-module.exports = resizeImage
+function getFileContent(filePath) {
+	if (fs.existsSync(filePath)) {
+		return fs.readFileSync(filePath, 'utf-8')
+	} else {
+		return null
+	}
+}

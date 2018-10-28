@@ -8,9 +8,10 @@ const { writeCompiledConfig } = require('./utils/encore')
 const config = {
 	inputDir: 'source',
 	outputDir: 'public',
-	imagesResizeFolder: 'resized-images',
+	imagesResizeFolder: 'images/resized',
 }
 module.exports.config = config
+const fileUtils = require('./utils/file')
 dotenvSafe.load({
 	path: path.resolve(process.cwd(), Encore.isProduction()
 		? '.env-dev.example'
@@ -58,12 +59,14 @@ Encore
 const webpackConfig = Encore.getWebpackConfig()
 if (!Encore.isProduction()) {
 	addBrowserSyncPlugin()
-	// Set compiled config in Intellij preferences
-	writeCompiledConfig(webpackConfig)
 }
 addAliases()
 configureModuleRules()
 addPugPlugin()
+if (!Encore.isProduction()) {
+	// Set compiled config in Intellij preferences
+	writeCompiledConfig(webpackConfig)
+}
 function addAliases() {
 	webpackConfig.resolve.alias = {
 		// Use minified version of Vue on production
@@ -106,7 +109,8 @@ function addBrowserSyncPlugin() {
 	}))
 }
 function addPugPlugin() {
-	global.resizeImage = require('./utils/resize-image')
+	global.resizeImage = fileUtils.resizeImage
+	global.getFileContent = fileUtils.getFileContent
 	const pugLoader = {
 		test: /\.pug$/,
 		loader: 'pug-loader',
@@ -114,6 +118,7 @@ function addPugPlugin() {
 			pretty: !Encore.isProduction(),
 			globals: [
 				'resizeImage',
+				'getFileContent',
 			],
 		},
 	}

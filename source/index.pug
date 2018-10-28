@@ -1,28 +1,6 @@
 extends layouts/base
 block body
-	-
-		const nav = [
-			{
-				link: '/library.html',
-				label: 'что почитать',
-			},
-			{
-				link: '/videos.html',
-				label: 'что посмотреть',
-			},
-			{
-				link: '/calendar.html',
-				label: 'куда пойти',
-			},
-		]
-	#intro.videoPresentation(intro): intro
-	nav.navLayer
-		ul.nav
-			for item in nav
-				li.navItem
-					a.navLink(
-					href=item.link
-					)=item.label
+	include components/nav-screen/nav-screen
 append styles
 	style#no-js-index.
 		.no-js .navLayer {

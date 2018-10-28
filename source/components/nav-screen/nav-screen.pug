@@ -1,0 +1,75 @@
+-
+	const nav = [
+		{
+			link: '/library.html',
+			label: 'библиотека',
+			image: 'assets/nav-screen/buttons/library.png',
+			name: 'library',
+		},
+		{
+			link: '/videos.html',
+			label: 'видео',
+			image: 'assets/nav-screen/buttons/videos.png',
+			name: 'videos',
+		},
+		{
+			link: '/calendar.html',
+			label: 'календарь событий',
+			image: 'assets/nav-screen/buttons/calendar.png',
+			name: 'calendar',
+		},
+	]
+	const links = [
+		{
+			link: 'https://vk.com/kotbrodskogo',
+			label: 'VK',
+			image: 'assets/icons/vk.svg',
+		},
+		{
+			link: 'https://www.facebook.com/kotbrodskogo',
+			label: 'Facebook',
+			image: 'assets/icons/facebook.svg',
+		},
+		{
+			link: 'http://instagram.com/kotbrodskogo',
+			label: 'Instagram',
+			image: 'assets/icons/instagram.svg',
+		},
+		{
+			link: 'https://www.youtube.com/channel/UC1F114JmC9CetaTmDMwtx6w',
+			label: 'YouTube',
+			image: 'assets/icons/youtube.svg',
+		},
+		{
+			link: 'https://t.me/kotbrodskogo',
+			label: 'Telegram',
+			image: 'assets/icons/telegram.svg',
+		},
+	]
+#intro.videoPresentation(intro): intro
+nav.navLayer
+	ul.nav
+		for item in nav
+			li.nav-item(
+			class=`nav-item_${item.name}`
+			)
+				a.navLink(
+				href=item.link
+				title=item.label
+				)
+					span.navLink-label=item.label
+					img.navLink-image(
+					src=item.image
+					alt=item.label
+					)
+	ul.externalLinks
+		for item in links
+			li.externalLinks-item
+				a.externalLink(
+				href=item.link
+				title=item.label
+				)
+					img.externalLink-image(
+					src=item.image
+					alt=item.label
+					)

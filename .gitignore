@@ -4,7 +4,7 @@
 /public/*.map
 /public/*.html
 /public/manifest.json
-/public/resized-images
+/public/images
 /yarn-error.log
 .env-dev
 /webpack.config.compiled.js

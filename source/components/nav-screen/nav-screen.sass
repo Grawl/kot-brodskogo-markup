@@ -1,0 +1,65 @@
+.navLayer
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 1
+	width: 100%
+	min-height: 100%
+	background:
+		color: white
+		image: url('assets/window-with-cat.jpg')
+		size: cover
+		position: center
+		repeat: no-repeat
+	color: white
+	a
+		color: inherit
+.nav
+	list-style: none
+	margin: 0
+	padding: 0
+	&-item
+		margin: 1em 0
+		position: absolute
+		transform: scale(1)
+		transition: transform 0.3s
+		&:hover
+			transform: scale(1.1)
+		&_library
+			top: 46%
+			left: 6%
+		&_videos
+			top: 23%
+			left: 17%
+		&_calendar
+			top: 43%
+			left: 30%
+.navLink
+	cursor: pointer
+	text-decoration: underline
+	&:hover
+		text-decoration: none
+	&-label
+		position: absolute
+		visibility: hidden
+		font-size: 0
+	&-image
+.externalLinks
+	absolute: bottom left
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100%
+	margin: 0
+	padding: 0
+	list-style: none
+.externalLink
+	display: block
+	margin: 1em 0.5em
+	transform: scale(1)
+	transition: transform 0.3s
+	&:hover
+		transform: scale(1.1)
+	&-image
+		display: block
+		width: 2em

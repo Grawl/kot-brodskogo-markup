@@ -110,8 +110,6 @@
 		.text2
 			opacity: 1
 	.step3
-		.logo
-			color: black
 		.videoLoading
 			opacity: 0
 			pointer-events: none
