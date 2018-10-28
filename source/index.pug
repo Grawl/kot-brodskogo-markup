@@ -15,8 +15,7 @@ block container
 				label: 'куда пойти',
 			},
 		]
-	#intro.videoPresentation(intro)
-		include components/intro/intro
+	#intro.videoPresentation(intro): intro
 	nav.navLayer
 		ul.nav
 			for item in nav
