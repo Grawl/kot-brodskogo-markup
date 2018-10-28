@@ -1,5 +1,5 @@
 extends layouts/base
-block container
+block body
 	-
 		const nav = [
 			{
@@ -23,8 +23,23 @@ block container
 					a.navLink(
 					href=item.link
 					)=item.label
-block scripts
-	script.
+append styles
+	style#no-js-index.
+		.no-js .navLayer {
+			opacity: 1;
+		}
+		.js .navLayer {
+			opacity: 0;
+		}
+		.js .videoPresentation ~ .navLayer {
+			opacity: 1;
+		}
+block vendorStyles
+	// PT Mono
+		regular 400
+	link(href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet')
+append scripts
+	script#external-storage-videos.
 		window['site'].step1video = {
 			url: 'media/blackboard.mp4',
 			type: 'video/mp4',

@@ -63,6 +63,7 @@
 						!=article.description
 				figure.shelf-item-image
 					img(
-					src=resizeImage(article.image, 200, 100)
+					src=resizeImage(article.image, 200, 150)
+					srcset=`${resizeImage(article.image, 200*1.5, 150*1.5)} 2x`
 					alt!=article.title
 					)

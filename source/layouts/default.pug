@@ -1,6 +1,6 @@
 extends base
-block container
-	a.logo(href='/' title="{{ 'Вернуться на главную' }}")
+block body
+	a.logo(href='/' title='Вернуться на главную')
 		include ../assets/kot-brodskogo-logo.svg
-	.content
+	.container: .content
 		block content

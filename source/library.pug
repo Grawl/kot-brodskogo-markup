@@ -1,4 +1,16 @@
 extends layouts/default
 block content
-	//img(src=resizeImage('public/content/library/6ctnlfxgbf8.jpg', 200, 100))
 	include components/library/library
+block vendorStyles
+	// Yeseva One
+		regular 400
+	link(href='https://fonts.googleapis.com/css?family=Yeseva+One' rel='stylesheet')
+	// Oranienbaum
+		regular 400
+	link(href='https://fonts.googleapis.com/css?family=Oranienbaum' rel='stylesheet')
+	// Roboto Slab
+		thin 100
+		light 300
+		regular 400
+		bold 700
+	link(href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet')
