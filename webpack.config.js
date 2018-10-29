@@ -24,6 +24,9 @@ const env = {
 	BROWSERSYNC_PORT: Number(process.env.BROWSERSYNC_PORT),
 	BROWSERSYNC_OPEN: JSON.parse(process.env.BROWSERSYNC_OPEN),
 }
+const publicEnv = {
+	GOOGLE_CALENDAR_EMBED: String(process.env.GOOGLE_CALENDAR_EMBED),
+}
 Encore
 	.setOutputPath(config.outputDir)
 	.setPublicPath('/')
@@ -109,6 +112,7 @@ function addBrowserSyncPlugin() {
 	}))
 }
 function addPugPlugin() {
+	global.env = publicEnv
 	global.resizeImage = fileUtils.resizeImage
 	global.getFileContent = fileUtils.getFileContent
 	const pugLoader = {
@@ -117,6 +121,7 @@ function addPugPlugin() {
 		options: {
 			pretty: !Encore.isProduction(),
 			globals: [
+				'env',
 				'resizeImage',
 				'getFileContent',
 			],
