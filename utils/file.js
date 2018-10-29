@@ -1,18 +1,23 @@
 const jimp = require('jimp')
 const fs = require('fs')
 const path = require('path')
+const crypto = require('crypto')
 const config = require('../webpack.config').config
 module.exports = {
 	resizeImage,
 	getFileContent,
 }
 function resizeImage(filePath, width, height, method = 'cover') {
-	const makeFilePath = filePath => {
+	const makeFilePath = string => {
 		const size = [
 			width ? Math.ceil(width) : 'auto',
 			height ? Math.ceil(height) : 'auto',
 		].join('-')
-		return path.join(config.imagesResizeFolder, method, size, filePath)
+		const filePath = path.parse(string)
+		const file = fs.readFileSync(path.join(config.inputDir, string))
+		const md5 = crypto.createHash('md5').update(file).digest('hex')
+		const newFileName = `${filePath.name}-${md5}${filePath.ext}`
+		return path.join(config.imagesResizeFolder, method, size, newFileName)
 	}
 	const newFilePath = path.join(config.outputDir, makeFilePath(filePath))
 	if (fs.existsSync(newFilePath)) {
