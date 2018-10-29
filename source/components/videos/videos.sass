@@ -1,0 +1,60 @@
+.videosTitle
+	margin-top: 0
+	font-family: $font-sans-slab
+	font-weight: normal
+	font-size: 4em
+	letter-spacing: 0.05em
+.videosShelf
+	$gutter: $gutter
+	display: flex
+	flex-flow: row
+	flex-wrap: wrap
+	margin-x: -$gutter * 2
+	&-item
+		display: block
+		box-sizing: border-box
+		margin-bottom: 2em
+		font-family: $font-sans-slab
+		color: inherit
+		transform: rotate(0deg) scale(1)
+		transition: transform 15s ease-in-out
+		@media (min-width: 640px)
+			padding-bottom: 3em
+		@media (max-width: 640px - 1)
+			width: calc(100% / 2)
+		@media (max-width: 445px - 1)
+			width: 100%
+		width: calc(100% / 3)
+		@at-root a#{&}
+			text-decoration: none
+		&:hover
+			transform: rotate(3deg) scale(1.1)
+			%videos-shelf-item-hover-title
+				text-decoration: underline
+			%videos-shelf-item-hover-image
+				filter: grayscale(0)
+		&--layout
+			display: flex
+			flex-flow: column
+			height: 100%
+			padding-x: $gutter * 2
+		&-label
+			@extend %videos-shelf-item-hover-title
+			margin: 0.75rem 0
+			font-weight: normal
+			font-size: 1em
+			line-height: 1
+			letter-spacing: -0.04em
+		&-image
+			@extend %videos-shelf-item-hover-image
+			position: relative
+			filter: grayscale(1)
+			img
+				display: block
+				width: 100%
+		&-length
+			absolute: bottom 0.5em right 0.5em
+			z-index: 2
+			background-color: white
+			color: black
+			padding: 0

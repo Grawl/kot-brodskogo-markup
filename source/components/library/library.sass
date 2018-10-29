@@ -1,9 +1,10 @@
 .libraryTitle
+	margin-top: 0
 	font-family: $font-sans-slab
 	font-weight: normal
 	font-size: 4em
 	letter-spacing: 0.05em
-.shelf
+.libraryShelf
 	$gutter: $gutter
 	$border-color: hsl(0, 0%, 46%)
 	display: flex
@@ -30,56 +31,56 @@
 		@at-root a#{&}
 			text-decoration: none
 		&:hover
-			%shelf-item-hover-image
+			%library-shelf-item-hover-image
 				filter: grayscale(0)
-			&%shelf-item-hover-1
+			&%library-shelf-item-hover-1
 				color: hsl(66, 70%, 61%)
-			&%shelf-item-hover-2
+			&%library-shelf-item-hover-2
 				color: hsl(36, 100%, 65%)
-			&%shelf-item-hover-3
+			&%library-shelf-item-hover-3
 				color: hsl(174, 42%, 65%)
-			&%shelf-item-hover-4
+			&%library-shelf-item-hover-4
 				color: hsl(291, 47%, 71%)
-			&%shelf-item-hover-5
+			&%library-shelf-item-hover-5
 				color: hsl(174, 42%, 65%)
-			&%shelf-item-hover-6
+			&%library-shelf-item-hover-6
 				color: hsl(262, 47%, 63%)
-			&%shelf-item-hover-7
+			&%library-shelf-item-hover-7
 				color: hsl(123, 38%, 64%)
-			&%shelf-item-hover-8
+			&%library-shelf-item-hover-8
 				color: hsl(0, 69%, 67%)
 		&:nth-child(8n)
-			@extend %shelf-item-hover-1
+			@extend %library-shelf-item-hover-1
 		&:nth-child(8n-1)
-			@extend %shelf-item-hover-2
+			@extend %library-shelf-item-hover-2
 		&:nth-child(8n-2)
-			@extend %shelf-item-hover-3
+			@extend %library-shelf-item-hover-3
 		&:nth-child(8n-3)
-			@extend %shelf-item-hover-4
+			@extend %library-shelf-item-hover-4
 		&:nth-child(8n-4)
-			@extend %shelf-item-hover-5
+			@extend %library-shelf-item-hover-5
 		&:nth-child(8n-5)
-			@extend %shelf-item-hover-6
+			@extend %library-shelf-item-hover-6
 		&:nth-child(8n-6)
-			@extend %shelf-item-hover-7
+			@extend %library-shelf-item-hover-7
 		&:nth-child(8n-7)
-			@extend %shelf-item-hover-8
+			@extend %library-shelf-item-hover-8
 		&:not(:nth-child(4n))
-			%shelf-item-1-4-bordered-layout
+			%library-shelf-item-1-4-bordered-layout
 				@media (min-width: 1024px)
 					border-right: 1px solid $border-color
 		&:not(:nth-child(3n))
-			%shelf-item-1-3-bordered-layout
+			%library-shelf-item-1-3-bordered-layout
 				@media (min-width: 640px) and (max-width: 1024px - 1)
 					border-right: 1px solid $border-color
 		&:not(:nth-child(2n))
-			%shelf-item-1-2-bordered-layout
+			%library-shelf-item-1-2-bordered-layout
 				@media (min-width: 445px) and (max-width: 640px - 1)
 					border-right: 1px solid $border-color
 		&--layout
-			@extend %shelf-item-1-4-bordered-layout
-			@extend %shelf-item-1-3-bordered-layout
-			@extend %shelf-item-1-2-bordered-layout
+			@extend %library-shelf-item-1-4-bordered-layout
+			@extend %library-shelf-item-1-3-bordered-layout
+			@extend %library-shelf-item-1-2-bordered-layout
 			display: flex
 			flex-flow: column
 			height: 100%
@@ -101,7 +102,7 @@
 			font-family: $font-sans-slab
 			font-size: 0.9em
 		&-image
-			@extend %shelf-item-hover-image
+			@extend %videos-shelf-item-hover-image
 			filter: grayscale(1)
 			margin-top: auto
 			img
